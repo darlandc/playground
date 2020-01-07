@@ -1,0 +1,90 @@
+<div>
+  <div class="card wrapper-login">
+
+        <div class="step1">
+
+          <div class="close">
+            <a href="#" > <img src="../../assets/round-close.png" alt=""></a>
+          </div>
+
+          <div class="logo" align="center">
+            <img src="../../assets/logo-serasa.png" alt="" width="170">
+          </div>
+          <div>
+
+
+          <p>Acessar minha área</p>
+          </div>
+
+          <form [formGroup]="frmSignup" (submit)="submit()">
+            <div class="form-group">
+              <label for="email" [ngClass]="frmSignup.controls['email'].invalid ? 'text-danger' : ''">E-mail</label>
+              <input id="email" formControlName="email" type="email" class="form-control" [ngClass]="frmSignup.controls['email'].invalid ? 'is-invalid' : ''">
+              <label class="text-danger" *ngIf="frmSignup.controls['email'].hasError('required')">
+                Email é obrigatório!
+              </label>
+              <label class="text-danger" *ngIf="frmSignup.controls['email'].hasError('email')">
+                Digite um e-mail válido!
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="password" [ngClass]="frmSignup.controls['password'].invalid ? 'text-danger' : ''">Senha:</label>
+              <input id="password" formControlName="password" type="password" class="form-control" [ngClass]="frmSignup.controls['password'].invalid ? 'is-invalid' : ''" appPassword>
+            <!-- <div class="keep-connected">
+              <div class="checkbox">
+                <input type="checkbox" class="keep"> <span>Mantenha-me conectado</span>
+              </div>
+              <div class="forgot-pass">
+                <a href="#">Esqueci minha senha</a>
+              </div>
+            </div> -->
+
+              <div class="error-pass">
+              <label class="col" [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('minlength')  ? 'text-danger' : 'text-success'">
+                <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+                  frmSignup.controls['password'].hasError('minlength') ? 'cancel' :
+                  'check_circle' }}</i>
+                Deve ter pelo menos 8 caracteres!
+              </label>
+              <label class="col" [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasNumber')  ? 'text-danger' : 'text-success'">
+                <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+                  frmSignup.controls['password'].hasError('hasNumber') ? 'cancel' :
+                  'check_circle' }}</i>
+                Deve conter pelo menos um número!
+              </label>
+              <label class="col" [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasCapitalCase')  ? 'text-danger' : 'text-success'">
+                <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+                  frmSignup.controls['password'].hasError('hasCapitalCase') ? 'cancel' :
+                  'check_circle' }}</i>
+                Deve conter pelo menos uma letra maíuscula!
+              </label>
+              <label class="col" [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasSmallCase')  ? 'text-danger' : 'text-success'">
+                <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+                  frmSignup.controls['password'].hasError('hasSmallCase') ? 'cancel' :
+                  'check_circle' }}</i>
+                Deve conter pelo menos uma letra minúscula!
+              </label>
+              <label class="col" [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasSpecialCharacters') ? 'text-danger' : 'text-success'">
+                <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+                  frmSignup.controls['password'].hasError('hasSpecialCharacters') ? 'cancel' :
+                  'check_circle' }}</i>
+                Deve conter pelo menos um caractere especial!
+              </label>
+            </div>
+          </div>
+            <div class="form-group" align="center">
+              <button [disabled]="frmSignup.invalid" type="submit" class="btn-aceitar">Acessar</button>
+            </div>
+          </form>
+
+          <div class="other-options">
+            <p>Outras opções de entrada</p>
+            <button>Certificado Digital</button>
+            <button (click)="next()">Logon Blindado</button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>

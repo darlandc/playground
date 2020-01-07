@@ -1,0 +1,12 @@
+<p>acesso works!</p>
+
+<div *ngIf="cadastro; else formLogin">
+  <div [@animacao-painel]>
+  <app-cadastro></app-cadastro>
+  </div> 
+</div>
+<ng-template #formLogin>
+  <div [@animacao-painel]>
+    <app-login (exibirPainel)="exibirPainel($event)"></app-login>
+  </div>
+</ng-template>

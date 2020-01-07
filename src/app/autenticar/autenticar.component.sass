@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:500&display=swap')
+
+$wine: #632179
+$pink: #BB2C7E
+$darkblue: #1d4f91
+$flatblue: #3E6FB4
+$rasperry: #af1685
+$redalert: #e4002b
+$greenalert: #009f4d
+$grayart: #e0e0e1
+
+:host
+  background: #FFF
+  color: black
+  position: fixed
+  left: auto
+  top: 0
+  right: 0
+  bottom: 0
+  width: 592px
+  min-width: 250px
+  z-index: 9999
+
+.left
+  float: left
+
+.right
+  float: right
+  
+.container
+  padding: 128px 104px
+  border: 1px solid red
+
+  .logo-container
+    text-align: center
+
+  p
+    text-align: left
+    font-size: 18px
+    line-height: 24px
+    color: $rasperry
+    font-family: 'Roboto', sans-serif
+    font-weight: 500
+
+  .form-container
+    input.username
+      width: 384px
+      height: 48px
+      border-radius: 8px
+      border: solid 1px $grayart
+    input.password
+      width: 384px
+      height: 48px
+      border-radius: 8px
+      border: solid 1px $grayart
+      position: relative
+      top: 16px
+    ::placeholder
+      color: $grayart
+      position: relative
+      left: 1rem
+
+    .legend-container
+      border: 1px solid red
+      position: relative
+      top: 2rem
+      height: 42px
+      font-family: 'Roboto', sans-serif
+      color: #333
+      font-size: 14px
+      line-height: 20px
+
+      .left
+        input
+          width: 18px
+          height: 18px
+          border-radius: 2px
+          background-color: $darkblue
+
+      .right a
+        color: $darkblue
+
+@media only screen and (max-width: 600px) 
+ 
+  :host
+    width: 100%
+
+  .container
+    display: block
+    padding: 10% 14%
