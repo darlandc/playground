@@ -41,11 +41,11 @@ export class Step1Component implements OnInit {
     return this.fb.group(
       {
         email: [
-          'darlandc@gmail.com',
+          null,
           Validators.compose([Validators.email, Validators.required])
         ],
         password: [
-          'R0dney@90',
+          null,
           Validators.compose([
             Validators.required,
             // check whether the entered password has a number
